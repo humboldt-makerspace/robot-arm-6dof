@@ -40,39 +40,75 @@ void BTSerial::processCommand (String cmd)
 	if (cmd.isEmpty()) return;
 	cmd.toLowerCase();
 	if (cmd == FIRST_JOINT_CW) {
+		ArmController::drive(BASE, FORWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(BASE, IDLE);
 		Serial.println("rotating first joint clockwise");
 	}
 	else if (cmd == FIRST_JOINT_CCW) {
+		ArmController::drive(BASE, BACKWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(BASE, IDLE);
 		Serial.println("rotating first joint counter-clockwise");
 	}
 	else if (cmd == SECOND_JOINT_CW) {
+		ArmController::drive(ARM_1, FORWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(ARM_1, IDLE);
 		Serial.println("rotating second joint clockwise");
 	}
 	else if (cmd == SECOND_JOINT_CCW) {
+		ArmController::drive(ARM_1, BACKWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(ARM_1, IDLE);
 		Serial.println("rotating second joint counter-clockwise");
 	}
 	else if (cmd == THIRD_JOINT_CW) {
+		ArmController::drive(ARM_2, FORWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(ARM_2, IDLE);
 		Serial.println("rotating third joint clockwise");
 	}
 	else if (cmd == THIRD_JOINT_CCW) {
+		ArmController::drive(ARM_2, BACKWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(ARM_2, IDLE);
 		Serial.println("rotating third joint counter-clockwise");
 	}
 	else if (cmd == FOURTH_JOINT_CW) {
+		ArmController::drive(ARM_3, FORWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(ARM_3, IDLE);
 		Serial.println("rotating fourth joint clockwise");
 	}
 	else if (cmd == FOURTH_JOINT_CCW) {
+		ArmController::drive(ARM_3, BACKWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(ARM_3, IDLE);
 		Serial.println("rotating fourth joint counter-clockwise");
 	}
 	else if (cmd == FIFTH_JOINT_CW) {
+		ArmController::drive(CLAMP_ROLL, FORWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(CLAMP_ROLL, IDLE);
 		Serial.println("rotating fifth joint clockwise");
 	}
 	else if (cmd == FIFTH_JOINT_CCW) {
+		ArmController::drive(CLAMP_ROLL, BACKWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(CLAMP_ROLL, IDLE);
 		Serial.println("rotating fifth joint counter-clockwise");
 	}
 	else if (cmd == SIXTH_JOINT_CW) {
+		ArmController::drive(CLAMP_PITCH, FORWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(CLAMP_PITCH, IDLE);
 		Serial.println("rotating sixth joint clockwise");
 	}
 	else if (cmd == SIXTH_JOINT_CCW) {
+		ArmController::drive(CLAMP_PITCH, BACKWARD);
+		delay(STEP_DURATION);
+		ArmController::drive(CLAMP_PITCH, IDLE);
 		Serial.println("rotating sixth joint counter-clockwise");
 	}
 	else {

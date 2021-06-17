@@ -1,4 +1,4 @@
-#include "io/PWMDriver.hpp"
+#include "actuator/PWMDriver.hpp"
 #include "system/Interface.hpp"
 
 int PWMDriver::maxDuty;

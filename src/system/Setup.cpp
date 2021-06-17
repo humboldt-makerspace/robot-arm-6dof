@@ -52,4 +52,5 @@ void Setup::init (void)
 	initButton();
 	initBT();
 	PWMDriver::init();
+	Serial.println(WiFi.macAddress());
 }

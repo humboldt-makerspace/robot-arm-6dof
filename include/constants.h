@@ -13,8 +13,8 @@
 #define PWM_PIN_2				25
 #define PWM_PIN_3				33
 #define PWM_PIN_4				32
-#define PWM_PIN_5				35
-#define PWM_PIN_6				34
+#define PWM_PIN_5				18
+#define PWM_PIN_6				19
 #define CHANNEL_1				1
 #define CHANNEL_2				2
 #define CHANNEL_3				3
@@ -22,13 +22,23 @@
 #define CHANNEL_5				5
 #define CHANNEL_6				6
 #define PWM_FREQUENCY			50
-#define RESOLUTION_BITS			12.0
+#define RESOLUTION_BITS			8.0
 #define NUM_MOTORS				6
+#define BASE_FWD				0.115
+#define BASE_REV				0.04
+#define BASE_IDLE				0.075
+#define CLAMP_R_FWD				0.112
+#define CLAMP_R_REV				0.05
+#define CLAMP_R_IDLE			0.008
+#define CLAMP_P_OPEN			0.03
+#define CLAMP_P_CLOSE			0.123
+#define CLAMP_P_IDLE			0.008
 
 /* controller */
 #define MAX_SPEED				0.005
 #define ACCELERATION			0.0001
 #define CLOSE_THRESHOLD			0.001
+#define STEP_DURATION			100
 
 /* buttons */
 #define RED_BUTTON_PIN			12
@@ -59,5 +69,9 @@
 typedef enum joints {
 	BASE, ARM_1, ARM_2, ARM_3, CLAMP_ROLL, CLAMP_PITCH
 } Joint;
+
+typedef enum drivemodes {
+	IDLE, FORWARD, BACKWARD
+} DriveMode;
 
 #endif
